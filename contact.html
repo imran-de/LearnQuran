@@ -45,7 +45,7 @@
 
 
     <!-- Navbar start -->
-    <div class="container-fluid border-bottom bg-light wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid bg-light wow fadeIn" data-wow-delay="0.1s">
         <div class="container topbar bg-primary d-none d-lg-block py-2" style="border-radius: 0 40px">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
@@ -67,6 +67,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid border-bottom bg-light wow fadeIn sticky-top" data-wow-delay="0.1s">
         <div class="container px-0">
             <nav class="navbar navbar-light navbar-expand-xl py-3">
                 <a href="/" class="navbar-brand">
@@ -126,7 +128,7 @@
     <!-- Contact Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <div class="p-5 bg-light rounded">
+            <div class="p-lg-5 p-3 bg-light rounded">
                 <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
                     <h4
                         class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">
@@ -137,17 +139,18 @@
                 <div class="row g-5 mb-5">
                     <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                         <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
-                            <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
-                            <div class="">
-                                <h4>Address</h4>
-                                <p class="mb-2">Lorem ipsum dolor sit, UK</p>
+                            <i class="fab fa-whatsapp fa-2x text-primary me-4"></i>
+                            <div class="text-break">
+                                <h4>Whatsapp</h4>
+                                <p class="mb-2"><a href="https://wa.me/1234567890?text=Hello%2C%20I%20need%20help%21"
+                                        class="text-start rounded-0 text-body mb-1">+0000 0000 0000 000</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                         <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
                             <i class="fas fa-envelope fa-2x text-primary me-4"></i>
-                            <div class="">
+                            <div class="text-break">
                                 <h4>Mail Us</h4>
                                 <p class="mb-2">taniyahussain85@gmail.com</p>
                             </div>
@@ -156,7 +159,7 @@
                     <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                         <div class="d-flex w-100 border border-primary p-4 rounded bg-white">
                             <i class="fa fa-phone-alt fa-2x text-primary me-4"></i>
-                            <div class="">
+                            <div class="text-break">
                                 <h4>Telephone</h4>
                                 <p class="mb-2">(+000) 0000 0000 000</p>
                             </div>
@@ -237,6 +240,9 @@
                                 <p>Any students from any where in the world
                                     are welcome to join</p>
 
+                                <a href="https://wa.me/1234567890?text=Hello%2C%20I%20need%20help%21"
+                                    class="text-start rounded-0 text-body mb-1"><i
+                                        class="fab fa-whatsapp text-primary me-2"></i> +0000 0000 0000 000</a>
                                 <a href="tel:00000000000000" class="text-start rounded-0 text-body mb-1"><i
                                         class="fa fa-phone-alt text-primary me-2"></i> +0000 0000 0000 000</a>
                                 <a href="mailto:taniyahussain85@gmail.com"
@@ -337,6 +343,33 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        // Get the status and message from the URL query string
+        var urlParams = new URLSearchParams(window.location.search);
+        var status = urlParams.get('status');
+        var message = urlParams.get('message');
+
+        // Check if there's a status and message to display
+        if (status && message) {
+            if (status === 'success') {
+                if (message === 'emails_sent') {
+                    alert('Your message has been successfully sent to both the admin and yourself.');
+                }
+            } else if (status === 'error') {
+                if (message === 'invalid_email') {
+                    alert('The email address you provided is invalid. Please try again.');
+                } else if (message === 'admin_email_failed') {
+                    alert('There was an issue sending the message to the admin. Please try again.');
+                } else if (message === 'user_email_failed') {
+                    alert('There was an issue sending the confirmation email to you. Please try again.');
+                }
+            }
+
+            // Redirect the user to the parent page (the one that called the PHP script)
+            window.location.href = document.referrer;
+        }
+    </script>
+
 </body>
 
 </html>
