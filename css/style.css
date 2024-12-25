@@ -229,10 +229,16 @@ h6,
 /*** Hero Header ***/
 .hero-header,
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.05)), url(../images/hero-image-open-quran.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/hero-image-open-quran.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.banner-text-color{
+    background: linear-gradient(to right, #f32170, 
+                    #ff6b08, #cf23cf, #eedd44); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text; 
 }
 /*** Hero Header ***/
 
