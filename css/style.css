@@ -450,7 +450,7 @@ h6,
 
 .program .program-item .program-img .program-rate {
     position: absolute;
-    width: 100px; 
+    width: max-content; /*100px*/ 
     top: -20px; 
     left: 50%; 
     margin-left: -50px; 
