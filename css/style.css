@@ -126,6 +126,10 @@ h6,
 .img-border-radius {
     border-radius: 50% 20% / 10% 40%;
 }
+.program-img .img-border-radius.height-200px{
+    height: 200px;
+}
+
 
 .title-border-radius {
     border-radius: 10% 30%;
@@ -437,6 +441,10 @@ h6,
     background: var(--bs-primary) !important;
     color: var(--bs-white) !important;
 }
+.service-content-inner img{
+    height: 150px;
+    object-fit: contain;
+}
 /*** Service End ***/
 
 
@@ -662,7 +670,8 @@ h6,
 
 /*** Footer Start ***/
 .footer {
-    background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, 1)), url(../img/background.jpg);
+    background: linear-gradient(rgba(255, 236, 242, .95), rgba(255, 236, 242, 1)), url(../images/madina.jpeg);
+    /* color: rgb(255, 236, 242); */
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
