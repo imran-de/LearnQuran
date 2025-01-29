@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Admin's email address (change to your email)
-    $admin_email = "stimran4405@gmail.com";
+    $admin_email = "taniyahussain85@gmail.com";
 
     // Subject for both emails
     $subject_admin = "New Contact Form Submission";
@@ -39,12 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email to admin
     $headers_admin = "From: $email" . "\r\n" .
-                     "Reply-To: stimran4405@gmail.com" . "\r\n" . // Reply to user's email
+                     "Reply-To: $email" . "\r\n" . // Reply to user's email
                      "X-Mailer: PHP/" . phpversion();
     if (mail($admin_email, $subject_admin, $admin_message, $headers_admin)) {
         // Send email to user
-        $headers_user = "From: stimran4405@gmail.com" . "\r\n" .
-                        "Reply-To: $email" . "\r\n" . // Reply to user's email
+        $headers_user = "From: $admin_email" . "\r\n" .
+                        "Reply-To: $admin_email" . "\r\n" . // Reply to user's email
                         "X-Mailer: PHP/" . phpversion();
         if (mail($email, $subject_user, $user_message, $headers_user)) {
             // Success
