@@ -38,12 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ";
 
     // Send email to admin
-    $headers_admin = "From: no-reply@yourwebsite.com" . "\r\n" .
-                     "Reply-To: $email" . "\r\n" . // Reply to user's email
+    $headers_admin = "From: $email" . "\r\n" .
+                     "Reply-To: stimran4405@gmail.com" . "\r\n" . // Reply to user's email
                      "X-Mailer: PHP/" . phpversion();
     if (mail($admin_email, $subject_admin, $admin_message, $headers_admin)) {
         // Send email to user
-        $headers_user = "From: no-reply@yourwebsite.com" . "\r\n" .
+        $headers_user = "From: stimran4405@gmail.com" . "\r\n" .
                         "Reply-To: $email" . "\r\n" . // Reply to user's email
                         "X-Mailer: PHP/" . phpversion();
         if (mail($email, $subject_user, $user_message, $headers_user)) {
